@@ -1,6 +1,13 @@
+import {PropTypes} from 'common/types'
+
 module.exports = class extends React.Component {
 	static childContextTypes = {
-		actions: React.PropTypes.object
+		actions: PropTypes.actions
+	}
+
+	static propTypes = {
+		actions: PropTypes.actions.isRequired,
+		children: React.PropTypes.node
 	}
 
 	getChildContext() {

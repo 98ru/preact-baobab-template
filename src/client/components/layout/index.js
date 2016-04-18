@@ -1,4 +1,9 @@
-import React from 'react'
+module.exports = class extends React.Component {
+	static propTypes = {
+		children: React.PropTypes.node
+	}
 
-module.exports = (props) =>
-	<div>{props.children}</div>
+	render() {
+		<div>{this.props.children}</div>
+	}
+}
