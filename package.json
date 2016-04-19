@@ -1,7 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build": "webpack"
+    "build": "NODE_ENV=production webpack -p",
+    "watch": "webpack-dev-server --hot --inline --history-api-fallback"
   },
   "dependencies": {
     "react": "15.0.1",
@@ -16,6 +17,8 @@
     "babel-preset-react": "6.5.0",
     "babel-preset-react-hmre": "1.1.1",
     "babel-preset-stage-0": "6.5.0",
-    "webpack": "1.13.0"
+    "html-webpack-plugin": "2.16.0",
+    "webpack": "1.13.0",
+    "webpack-dev-server": "1.14.1"
   }
 }

@@ -1,6 +1,8 @@
 import path from 'path'
 import webpack from 'webpack'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 import {dependencies} from './package.json'
+const {NODE_ENV} = process.env
 
 const paths = {
 	build: path.resolve('build'),
@@ -8,10 +10,13 @@ const paths = {
 }
 
 const plugins = [
+	new HtmlWebpackPlugin(),
 	new webpack.optimize.CommonsChunkPlugin({
 		name: 'vendor'
 	}),
-
+	new webpack.DefinePlugin({
+		'process.env.NODE_ENV': JSON.stringify(NODE_ENV)
+	}),
 	new webpack.ProvidePlugin({
 		React: 'react',
 		ReactDOM: 'react-dom',
