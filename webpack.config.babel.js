@@ -19,8 +19,7 @@ const plugins = [
 	}),
 	new webpack.ProvidePlugin({
 		React: 'react',
-		ReactDOM: 'react-dom',
-		ReactRouter: 'react-router'
+		ReactDOM: 'react-dom'
 	})
 ]
 

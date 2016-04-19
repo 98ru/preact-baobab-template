@@ -1,11 +1,19 @@
-import actions from 'actions'
-import routes from 'views/routes'
+import Baobab from 'baobab'
+import {browserHistory, Router} from 'react-router'
+import {root} from 'baobab-react/higher-order'
+import * as actions from 'actions'
 import ActionsController from 'controllers/actions'
-const {browserHistory, Router} = ReactRouter
+import {getDefaultState} from 'common/state'
+import routes from 'views/routes'
+
+const Root = root(
+	new Baobab(getDefaultState()), () =>
+		<ActionsController actions={actions}>
+			<Router history={browserHistory}>{routes}</Router>
+		</ActionsController>
+)
 
 ReactDOM.render(
-	<ActionsController actions={actions}>
-		<Router history={browserHistory}>{routes}</Router>
-	</ActionsController>,
-	document.body.appendChild(document.createElement('div'))
+	<Root />,
+	document.body.appendChild(document.createElement('span'))
 )

@@ -1,1 +1,1 @@
-module.exports = {}
+export const page = require('actions/page')

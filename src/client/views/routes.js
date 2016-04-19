@@ -1,4 +1,4 @@
-const {Route} = ReactRouter
+import {Route} from 'react-router'
 
 module.exports = (
 	<Route>
