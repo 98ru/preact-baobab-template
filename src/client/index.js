@@ -7,5 +7,5 @@ ReactDOM.render(
 	<ActionsController actions={actions}>
 		<Router history={browserHistory}>{routes}</Router>
 	</ActionsController>,
-	document.getElementById('root')
+	document.body.appendChild(document.createElement('div'))
 )

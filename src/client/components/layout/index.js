@@ -4,6 +4,8 @@ module.exports = class extends React.Component {
 	}
 
 	render() {
-		<div>{this.props.children}</div>
+		return (
+			<div>{this.props.children}</div>
+		)
 	}
 }
