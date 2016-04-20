@@ -2,7 +2,8 @@
   "private": true,
   "scripts": {
     "build": "NODE_ENV=production webpack -p",
-    "watch": "webpack-dev-server --hot --inline --history-api-fallback"
+    "watch": "webpack-dev-server --hot --inline --history-api-fallback",
+    "test": "NODE_ENV=test NODE_PATH=src/client mocha src/client"
   },
   "dependencies": {
     "baobab": "2.3.3",
@@ -20,6 +21,9 @@
     "babel-preset-react-hmre": "1.1.1",
     "babel-preset-stage-0": "6.5.0",
     "html-webpack-plugin": "2.16.0",
+    "jsdom": "8.4.0",
+    "mocha": "2.4.5",
+    "should": "8.3.1",
     "webpack": "1.13.0",
     "webpack-dev-server": "1.14.1"
   }

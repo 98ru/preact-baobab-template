@@ -1,13 +1,10 @@
 import {getDefaultState} from 'common/state'
 
 module.exports = {
-	set(options, tree) {
+	set(tree, options) {
 		const {page} = getDefaultState()
 		const _page = Object.assign(page, options)
 		tree.merge('page', _page)
-
-		if (process.browser) {
-			document.title = _page.title
-		}
+		document.title = _page.title
 	}
 }

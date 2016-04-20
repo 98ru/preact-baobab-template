@@ -6,7 +6,7 @@ module.exports = class extends React.Component {
 
 	componentDidMount() {
 		const {actions, tree} = this.context
-		actions.page.set({title: 'Home'}, tree)
+		actions.page.set(tree, {title: 'Home'})
 	}
 
 	render() {
