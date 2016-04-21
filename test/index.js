@@ -4,7 +4,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import should from 'should'
 import * as actions from 'actions'
-import {Dao, getDefaultState} from 'common/state'
+import Dao from 'common/dao'
+import defaultState from 'common/state'
 
 const document = jsdom('<!doctype html>')
 const {defaultView: window} = document
@@ -19,8 +20,8 @@ Object.assign(global, {
 	actions,
 	Baobab,
 	Dao,
+	defaultState,
 	document,
-	getDefaultState,
 	jsdom,
 	React,
 	ReactDOM,

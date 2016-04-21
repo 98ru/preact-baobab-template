@@ -2,14 +2,15 @@ import Baobab from 'baobab'
 import {browserHistory, Router} from 'react-router'
 import {root} from 'baobab-react/higher-order'
 import * as actions from 'actions'
-import {Dao, getDefaultState} from 'common/state'
+import Dao from 'common/dao'
 import DaoController from 'controllers/dao'
+import defaultState from 'common/state'
 import routes from 'views/routes'
 
-const tree = new Baobab(getDefaultState())
-const dao = new Dao({actions, getDefaultState, tree})
+const stateCursor = new Baobab(defaultState)
+const dao = new Dao({actions, defaultState, stateCursor})
 
-const Root = root(tree, () =>
+const Root = root(stateCursor, () =>
 	<DaoController dao={dao}>
 		<Router history={browserHistory}>{routes}</Router>
 	</DaoController>

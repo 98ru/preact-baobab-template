@@ -1,13 +1,14 @@
 import Layout from 'components/layout'
+import PropTypes from 'common/types'
 
 module.exports = class extends React.Component {
 	static contextTypes = {
-		dao: React.PropTypes.func
+		dao: PropTypes.Dao
 	}
 
 	componentDidMount() {
 		const {dao} = this.context
-		dao('page').set({title: 'Home'})
+		dao.actions.page.set(dao, {title: 'Home'})
 	}
 
 	render() {

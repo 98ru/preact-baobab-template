@@ -1,9 +1,9 @@
 module.exports = {
-	set(options) {
-		const {page} = this.getDefaultState()
+	set(dao, options) {
+		const {page} = dao.defaultState
 		const _page = Object.assign(page, options)
 
-		this.tree.merge('page', _page)
+		dao.stateCursor.merge('page', _page)
 		document.title = _page.title
 	}
 }

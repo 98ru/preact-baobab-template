@@ -8,6 +8,7 @@
   "dependencies": {
     "baobab": "2.3.3",
     "baobab-react": "2.0.0-rc2",
+    "lodash.clonedeep": "4.3.2",
     "react": "15.0.1",
     "react-dom": "15.0.1",
     "react-router": "2.2.4"

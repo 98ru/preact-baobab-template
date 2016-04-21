@@ -1,10 +1,12 @@
+import PropTypes from 'common/types'
+
 module.exports = class extends React.Component {
 	static childContextTypes = {
-		dao: React.PropTypes.func
+		dao: PropTypes.Dao
 	}
 
 	static propTypes = {
-		dao: React.PropTypes.func.isRequired,
+		dao: PropTypes.Dao.isRequired,
 		children: React.PropTypes.node,
 	}
 
