@@ -3,6 +3,8 @@ import {jsdom} from 'jsdom'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import should from 'should'
+import * as actions from 'actions'
+import {Dao, getDefaultState} from 'common/state'
 
 const document = jsdom('<!doctype html>')
 const {defaultView: window} = document
@@ -14,8 +16,11 @@ for (let key in window) {
 }
 
 Object.assign(global, {
+	actions,
 	Baobab,
+	Dao,
 	document,
+	getDefaultState,
 	jsdom,
 	React,
 	ReactDOM,

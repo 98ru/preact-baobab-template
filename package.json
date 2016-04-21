@@ -3,7 +3,7 @@
   "scripts": {
     "build": "NODE_ENV=production webpack -p",
     "watch": "webpack-dev-server --hot --inline --history-api-fallback",
-    "test": "NODE_ENV=test NODE_PATH=src/client mocha src/client"
+    "test": "NODE_ENV=test NODE_PATH=src/client mocha src/client/**/test.js"
   },
   "dependencies": {
     "baobab": "2.3.3",

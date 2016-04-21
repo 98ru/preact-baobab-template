@@ -1,10 +1,9 @@
-import {getDefaultState} from 'common/state'
-
 module.exports = {
-	set(tree, options) {
-		const {page} = getDefaultState()
+	set(options) {
+		const {page} = this.getDefaultState()
 		const _page = Object.assign(page, options)
-		tree.merge('page', _page)
+
+		this.tree.merge('page', _page)
 		document.title = _page.title
 	}
 }
