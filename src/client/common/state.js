@@ -1,7 +1,5 @@
-export function Dao(options) {
-	let isBound = false
-
-	function autobind(context, actions) {
+export class Dao {
+	static bindActions(context, actions) {
 		Object.keys(actions).forEach(key => {
 			const namespace = actions[key]
 
@@ -12,16 +10,23 @@ export function Dao(options) {
 		})
 	}
 
-	return function dao(namespace) {
-		const {actions} = options
+	constructor(options) {
+		let isBound = false
 
-		if (!isBound) {
-			options.dao = dao
-			autobind(options, actions)
-			isBound = true
+		function dao(namespace) {
+			const {actions} = options
+
+			if (!isBound) {
+				options.dao = dao
+				Dao.bindActions(options, actions)
+				isBound = true
+			}
+
+			return actions[namespace]
 		}
 
-		return actions[namespace]
+		Object.setPrototypeOf(dao, Dao.prototype)
+		return dao
 	}
 }
 

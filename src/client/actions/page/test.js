@@ -1,7 +1,7 @@
 describe('actions.page', () => {
 	const {page} = getDefaultState()
 	const tree = new Baobab({page})
-	const dao = Dao({actions, getDefaultState, tree})
+	const dao = new Dao({actions, getDefaultState, tree})
 	const title = 'test'
 
 	it('sets a document title', () => {
