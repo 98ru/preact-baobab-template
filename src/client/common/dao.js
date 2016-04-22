@@ -1,4 +1,4 @@
-import cloneDeep from 'lodash.clonedeep'
+import {clone} from 'common/utils'
 
 module.exports = class Dao {
 	static options = new WeakMap()
@@ -14,7 +14,7 @@ module.exports = class Dao {
 
 	get defaultState() {
 		const options = Dao.options.get(this)
-		return cloneDeep(options.defaultState)
+		return clone(options.defaultState)
 	}
 
 	get stateCursor() {
