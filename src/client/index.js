@@ -4,7 +4,7 @@ import {root} from 'baobab-react/higher-order'
 import * as actions from 'actions'
 import Dao from 'common/dao'
 import DaoController from 'controllers/dao'
-import defaultState from 'common/state'
+import defaultState from 'state.json'
 import routes from 'views/routes'
 
 const stateCursor = new Baobab(defaultState)
