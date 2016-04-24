@@ -1,11 +1,11 @@
+import * as actions from 'actions'
 import Baobab from 'baobab'
+import Dao from 'common/dao'
+import defaultState from 'state.json'
 import {jsdom} from 'jsdom'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import should from 'should'
-import * as actions from 'actions'
-import Dao from 'common/dao'
-import defaultState from 'state.json'
 
 const document = jsdom('<!doctype html>')
 const {defaultView: window} = document
