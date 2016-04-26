@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	set(dao, options) {
 		const {page} = dao.defaultState
 		const _page = Object.assign(page, options)

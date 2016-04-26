@@ -1,8 +1,8 @@
 import {Route} from 'react-router'
 
-module.exports = (
+export default (
 	<Route>
-		<Route path="/" component={require('views/home')} />
-		<Route path="*" component={require('views/404')} />
+		<Route path="/" component={require('views/home').default} />
+		<Route path="*" component={require('views/404').default} />
 	</Route>
 )

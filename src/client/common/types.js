@@ -1,5 +1,5 @@
 import Dao from 'common/dao'
 
-module.exports = {
+export default {
 	Dao: React.PropTypes.instanceOf(Dao)
 }

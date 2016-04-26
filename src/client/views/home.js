@@ -1,7 +1,7 @@
 import Layout from 'components/layout'
 import PropTypes from 'common/types'
 
-module.exports = class extends React.Component {
+export default class extends React.Component {
 	static contextTypes = {
 		dao: PropTypes.Dao
 	}

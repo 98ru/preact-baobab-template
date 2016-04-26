@@ -1,6 +1,6 @@
 import {clone} from 'common/utils'
 
-module.exports = class Dao {
+export default class Dao {
 	static options = new WeakMap()
 
 	constructor(options) {
