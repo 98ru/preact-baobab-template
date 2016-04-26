@@ -11,7 +11,9 @@ export default class extends React.Component {
 	}
 
 	getChildContext() {
-		return {dao: this.props.dao}
+		return {
+			dao: this.props.dao
+		}
 	}
 
 	render() {

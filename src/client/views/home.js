@@ -8,7 +8,9 @@ export default class extends React.Component {
 
 	componentDidMount() {
 		const {dao} = this.context
-		dao.actions.page.set(dao, {title: 'Home'})
+		dao.actions.page.set(dao, {
+			title: 'Home'
+		})
 	}
 
 	render() {
