@@ -1,3 +1,4 @@
+import 'css/index.css'
 import * as actions from 'actions'
 import Baobab from 'baobab'
 import {browserHistory, Router} from 'react-router'

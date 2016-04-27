@@ -1,10 +1,12 @@
 {
   "private": true,
   "scripts": {
-    "upgrade": "npm-upgrade",
+    "prebuild": "npm run clean",
     "build": "NODE_ENV=production webpack -p",
-    "watch": "webpack-dev-server --hot --inline --history-api-fallback",
-    "test": "NODE_ENV=test NODE_PATH=src/client mocha src/client/**/test.js"
+    "clean": "rm -rf build",
+    "test": "NODE_ENV=test NODE_PATH=src/client mocha src/client/**/test.js",
+    "upgrade": "npm-upgrade",
+    "watch": "webpack-dev-server --hot --inline"
   },
   "dependencies": {
     "baobab": "2.3.3",
@@ -14,6 +16,7 @@
     "react-router": "2.3.0"
   },
   "devDependencies": {
+    "autoprefixer": "6.3.6",
     "babel-core": "6.7.7",
     "babel-loader": "6.2.4",
     "babel-plugin-transform-runtime": "6.7.5",
@@ -21,12 +24,20 @@
     "babel-preset-react": "6.5.0",
     "babel-preset-react-hmre": "1.1.1",
     "babel-preset-stage-0": "6.5.0",
+    "css-loader": "0.23.1",
+    "extract-text-webpack-plugin": "1.0.1",
+    "file-loader": "0.8.5",
     "html-webpack-plugin": "2.16.0",
     "jsdom": "8.4.0",
     "json-loader": "0.5.4",
     "mocha": "2.4.5",
     "npm-upgrade": "0.6.2",
+    "postcss-csso": "1.1.1",
+    "postcss-import": "8.1.0",
+    "postcss-loader": "0.8.2",
     "should": "8.3.1",
+    "style-loader": "0.13.1",
+    "url-loader": "0.5.7",
     "webpack": "1.13.0",
     "webpack-dev-server": "1.14.1"
   }
