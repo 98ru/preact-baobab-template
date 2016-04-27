@@ -12,7 +12,10 @@ const isDev = NODE_ENV === 'development'
 const isProd = NODE_ENV === 'production'
 
 const loaders = {
-	css: ['css', 'postcss'].join('!')
+	css: 'css!postcss',
+	get stylus() {
+		return `${this.css}!stylus`
+	}
 }
 
 const paths = {
@@ -75,8 +78,13 @@ module.exports = [{
 		}, {
 			test: /\.css$/,
 			loader: isDev
-				? [].concat('style', loaders.css).join('!')
+				? `style!${loaders.css}`
 				: ExtractTextPlugin.extract(loaders.css)
+		}, {
+			test: /\.styl$/,
+			loader: isDev
+				? `style!${loaders.stylus}`
+				: ExtractTextPlugin.extract(loaders.stylus)
 		}, {
 			test: /\.(eot|gif|jpe?g|png|svg|ttf|woff2?)$/,
 			loader: 'url',
