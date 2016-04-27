@@ -82,7 +82,7 @@ module.exports = [{
 			loader: 'url',
 			query: {
 				limit: 4096,
-				name: 'img/[name][hash:9].[ext]'
+				name: 'img/[name].[hash:9].[ext]'
 			}
 		}, {
 			test: /\.json$/,
