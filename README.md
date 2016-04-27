@@ -1,7 +1,7 @@
 React-Baobab-Template
 =====================
 
-React-Baobab-Template is an opinionated ready-to-use template which is build upon ES6, React, Baobab and Stylus. This template is battle-tested in production for almost a year.
+React-Baobab-Template is an opinionated ready-to-use template which is build upon ES6, [React](https://github.com/facebook/react), [Baobab](https://github.com/Yomguithereal/baobab) and [Stylus](https://github.com/stylus/stylus/). This template is battle-tested in production for almost a year.
 
 Directory Structure
 -------------------
@@ -28,7 +28,7 @@ There are three basic layers: actions, components and the state tree. There are 
 State Tree
 ----------
 
-The whole state of the application is stored within a single container - the state tree which is based on the superb Baobab library. If you haven't checked this library you should do so. It introduces many cool features such as immutability, fast object equality checks and easy state management.
+The whole state of the application is stored within a single container - the state tree which is based on the superb [Baobab](https://github.com/Yomguithereal/baobab) library. If you haven't checked this library you should do so. It introduces many cool features such as immutability, fast object equality checks and easy state management.
 
 The state tree should contain only JSON-serializable data. This optional restriction simplifies many things such as hydration/dehydration of the state.
 
