@@ -16,7 +16,7 @@ Directory Structure
 │     ├─ common/       -- utils, prop-types, etc.
 │     ├─ components/   -- dumb components
 │     ├─ controllers/  -- smart components
-│     └─ views/        -- page routes
+│     └─ views/        -- routes, page controllers
 └─ test/               -- test helpers
 ```
 
@@ -37,7 +37,7 @@ Components
 
 There are two types of components: dumb components and controllers or so-called smart components. This distinction simplifies testing of components and makes them more reusable.
 
-Controllers subscribe to branches of the state tree and receive updates as soon as anything within the observable part of the state is changed. Only containers should call actions or subscribe to state changes.
+Controllers subscribe to branches of the state tree and receive updates as soon as anything within the observable part of the state is changed. Only containers should call actions or subscribe to state changes. Views are controllers with some page-centric logic.
 
 Dumb components receive data and action handlers through props from controllers and may contain only other dumb components. They shouldn't set any local state nor call any actions.
 
