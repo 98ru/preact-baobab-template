@@ -1,7 +1,7 @@
 React-Baobab-Template
 =====================
 
-React-Baobab-Template is an opinionated ready-to-use template which is build upon ES6, [React](https://github.com/facebook/react), [Baobab](https://github.com/Yomguithereal/baobab) and [Stylus](https://github.com/stylus/stylus/). This template is battle-tested in production for almost a year.
+React-Baobab-Template is an opinionated ready-to-use template which is build upon ES6, [React](https://github.com/facebook/react) and [Baobab](https://github.com/Yomguithereal/baobab).
 
 Directory Structure
 -------------------
@@ -49,7 +49,7 @@ Actions are simple namespaced functions which do the whole work of talking to th
 Data Access Object
 ------------------
 
-Data Access Object or DAO is a special object created at the initialization of the application and passed through the context property to controllers. It contains all actions, a reference to the state tree and a default state of the application. Actions receive a Data Access Object which allows them to stay loosely-coupled and easily testable.
+Data Access Object or DAO is a special object created at the initialization of the application and passed through the context property to controllers. It contains all actions, a reference to the state tree and a default state of the application. Actions receive DAO which allows them to stay loosely-coupled and easily testable.
 
 License
 -------
