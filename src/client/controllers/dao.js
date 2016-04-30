@@ -1,4 +1,4 @@
-import PropTypes from 'common/types'
+import PropTypes from 'common/prop-types'
 
 export default class extends React.Component {
 	static childContextTypes = {
