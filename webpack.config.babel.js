@@ -38,7 +38,7 @@ const plugins = [
 
 if (isProd) {
 	plugins.push(
-		new ExtractTextPlugin('css/[name].css'),
+		new ExtractTextPlugin('/css/bundle.css'),
 		new webpack.optimize.DedupePlugin(),
 		new webpack.optimize.OccurrenceOrderPlugin()
 	)
@@ -83,7 +83,7 @@ module.exports = [{
 		}]
 	},
 	output: {
-		filename: 'js/[name].js',
+		filename: '/js/[name].js',
 		path: paths.build
 	},
 	plugins,
