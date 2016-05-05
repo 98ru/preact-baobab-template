@@ -71,11 +71,18 @@ module.exports = [{
 				? `style!${loaders.stylus}`
 				: ExtractTextPlugin.extract(loaders.stylus)
 		}, {
-			test: /\.(eot|gif|jpe?g|png|svg|ttf|woff2?)$/,
+			test: /\.(gif|jpe?g|png|svg)$/,
 			loader: 'url',
 			query: {
 				limit: 4096,
 				name: 'img/[name].[hash:9].[ext]'
+			}
+		}, {
+			test: /\.(eot|ttf|woff2?)$/,
+			loader: 'url',
+			query: {
+				limit: 4096,
+				name: 'font/[name].[hash:9].[ext]'
 			}
 		}, {
 			test: /\.json$/,
