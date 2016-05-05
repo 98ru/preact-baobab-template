@@ -8,10 +8,10 @@ import defaultState from 'state.json'
 import {root} from 'baobab-react/higher-order'
 import routes from 'views/routes'
 
-const stateCursor = new Baobab(defaultState)
-const dao = new Dao({actions, defaultState, stateCursor})
+const stateTree = new Baobab(defaultState)
+const dao = new Dao({actions, defaultState, stateTree})
 
-const Root = root(stateCursor, () =>
+const Root = root(stateTree, () =>
 	<DaoController dao={dao}>
 		<Router history={browserHistory}>{routes}</Router>
 	</DaoController>

@@ -9,6 +9,8 @@ import should from 'should'
 
 const document = jsdom('<!doctype html>')
 const {defaultView: window} = document
+const stateTree = new Baobab(defaultState)
+const dao = new Dao({actions, defaultState, stateTree})
 
 for (let key in window) {
 	if (!window.hasOwnProperty(key)) continue
@@ -17,10 +19,7 @@ for (let key in window) {
 }
 
 Object.assign(global, {
-	actions,
-	Baobab,
-	Dao,
-	defaultState,
+	dao,
 	document,
 	jsdom,
 	React,

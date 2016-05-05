@@ -1,13 +1,6 @@
-import PropTypes from 'common/prop-types'
-
 export default class extends React.Component {
 	static childContextTypes = {
-		dao: PropTypes.Dao
-	}
-
-	static propTypes = {
-		dao: PropTypes.Dao.isRequired,
-		children: React.PropTypes.node,
+		dao: React.PropTypes.object
 	}
 
 	getChildContext() {

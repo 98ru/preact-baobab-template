@@ -1,14 +1,10 @@
+import Controller from 'controllers'
 import Layout from 'components/layout'
-import PropTypes from 'common/prop-types'
+import PostsController from 'controllers/posts'
 
-export default class extends React.Component {
-	static contextTypes = {
-		dao: PropTypes.Dao
-	}
-
+export default class extends Controller {
 	componentDidMount() {
-		const {dao} = this.context
-		dao.actions.page.set(dao, {
+		this.actions.page.setTitle(this.dao, {
 			title: '404'
 		})
 	}

@@ -1,10 +1,8 @@
 import autoprefixer from 'autoprefixer'
-import csso from 'postcss-csso'
 import {dependencies} from './package.json'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import path from 'path'
-import postcssImport from 'postcss-import'
 import webpack from 'webpack'
 
 const {NODE_ENV = 'development'} = process.env
@@ -19,9 +17,9 @@ const loaders = {
 }
 
 const paths = {
+	assets: path.resolve('src/assets'),
 	build: path.resolve('build'),
-	client: path.resolve('src/client'),
-	assets: path.resolve('src/assets')
+	client: path.resolve('src/client')
 }
 
 const plugins = [
@@ -38,22 +36,9 @@ const plugins = [
 	})
 ]
 
-function postcss(webpack) {
-	const options = [postcssImport({
-		addDependencyTo: webpack
-	})]
-
-	if (isProd) {
-		options.push(csso)
-	}
-
-	options.push(autoprefixer)
-	return options
-}
-
 if (isProd) {
 	plugins.push(
-		new ExtractTextPlugin('css/bundle.css'),
+		new ExtractTextPlugin('css/[name].css'),
 		new webpack.optimize.DedupePlugin(),
 		new webpack.optimize.OccurrenceOrderPlugin()
 	)
@@ -102,7 +87,7 @@ module.exports = [{
 		path: paths.build
 	},
 	plugins,
-	postcss,
+	postcss: [autoprefixer],
 	resolve: {
 		root: [
 			paths.assets,

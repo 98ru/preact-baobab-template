@@ -1,24 +1,24 @@
 import {clone} from 'common/utils'
 
 export default class Dao {
-	static options = new WeakMap()
+	static params = new WeakMap()
 
-	constructor(options) {
-		Dao.options.set(this, options)
+	constructor(params) {
+		Dao.params.set(this, params)
 	}
 
 	get actions() {
-		const options = Dao.options.get(this)
-		return options.actions
+		const params = Dao.params.get(this)
+		return params.actions
 	}
 
 	get defaultState() {
-		const options = Dao.options.get(this)
-		return clone(options.defaultState)
+		const params = Dao.params.get(this)
+		return clone(params.defaultState)
 	}
 
-	get stateCursor() {
-		const options = Dao.options.get(this)
-		return options.stateCursor
+	get stateTree() {
+		const params = Dao.params.get(this)
+		return params.stateTree
 	}
 }
