@@ -5,11 +5,11 @@ export default ({posts}) =>
 		{!posts
 			? <Spinner />
 
-			: posts.map((post) =>
-				<div className="posts__post media" key={post.id}>
+			: posts.map(({body, id, title}) =>
+				<div className="posts__post media" key={id}>
 					<div className="media-body">
-						<h5 className="media-heading">{post.title}</h5>
-						{post.body}
+						<h5 className="media-heading">{title}</h5>
+						{body}
 					</div>
 				</div>
 			)
