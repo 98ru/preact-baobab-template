@@ -1,16 +1,19 @@
 import Controller from 'controllers'
 import Layout from 'components/layout'
+import PostsController from 'controllers/posts'
 
 export default class extends Controller {
 	componentDidMount() {
 		this.actions.page.setTitle(this.dao, {
-			title: 'Home'
+			title: 'Posts'
 		})
 	}
 
 	render() {
 		return (
-			<Layout>Home</Layout>
+			<Layout>
+				<PostsController />
+			</Layout>
 		)
 	}
 }
