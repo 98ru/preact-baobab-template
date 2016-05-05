@@ -13,7 +13,7 @@ Directory Structure
 │  ├─ assets/          -- assets like css, images, fonts
 │  └─ client/          -- client-side app
 │     ├─ actions/      -- list of actions
-│     ├─ common/       -- utils, prop-types, etc.
+│     ├─ common/       -- utils, helpers, etc.
 │     ├─ components/   -- dumb components
 │     ├─ controllers/  -- smart components
 │     └─ views/        -- routes, page controllers
