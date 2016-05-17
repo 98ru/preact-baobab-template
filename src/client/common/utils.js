@@ -1,8 +1,8 @@
-import bluebird from 'bluebird'
+import Promise from 'bluebird'
 import superagent from 'superagent'
 
-global.Promise = bluebird
-bluebird.config({
+global.Promise = Promise
+Promise.config({
 	warnings: true,
 	cancellation: true,
 	longStackTraces: true
