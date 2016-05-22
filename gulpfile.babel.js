@@ -9,8 +9,8 @@ export default gulp
 	.task('build:css', () =>
 		gulp.src(`${PATHS.ASSETS}/stylus/*.styl`)
 			.pipe(stylus({
-				'include css': true,
-				include: ['node_modules']
+				include: ['node_modules'],
+				'include css': true
 			}))
 			.pipe(autoprefixer())
 			.pipe(csso())
