@@ -7,7 +7,7 @@ export default {
 	setError(dao, {error}) {
 		const cursor = dao.stateTree.cursor(['page', 'error'])
 
-		if (e.isOperational) {
+		if (error.isOperational) {
 			const {message} = error
 			cursor.set({message})
 		} else if (error.response) {
