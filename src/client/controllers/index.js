@@ -16,12 +16,16 @@ export default class Controller extends React.Component {
 		this.dao = context.dao
 	}
 
+	componentWillUnmount() {
+		this.cancelPending()
+	}
+
 	set pending(action) {
 		Controller.pending.get(this).push(action)
 	}
 
 	cancelPending = () => {
-		Controller.pending.get(this).forEach((action, i) => {
+		Controller.pending.get(this).forEach((action) => {
 			if (action.isPending()) {
 				action.cancel()
 			}

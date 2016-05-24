@@ -6,11 +6,7 @@ export default branch({
 	posts: ['posts', 'items']
 }, class extends Controller {
 	componentDidMount() {
-		this.pending = this.actions.posts.getPosts(this.dao)
-	}
-
-	componentWillUnmount() {
-		this.cancelPending()
+		this.pending = this.actions.posts.get(this.dao)
 	}
 
 	render() {
