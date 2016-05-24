@@ -1,15 +1,13 @@
-import {dependencies} from './package.json'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import {isDeveloment, isProduction, PATHS} from './config'
+import {NODE_ENV, isDeveloment, isProduction, PATHS} from './config'
 import path from 'path'
 import webpack from 'webpack'
 
 const plugins = [
-	new HtmlWebpackPlugin({
+	new (require('html-webpack-plugin'))({
 		template: `${PATHS.ASSETS}/index.html`
 	}),
 	new webpack.DefinePlugin({
-		'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+		'process.env.NODE_ENV': JSON.stringify(NODE_ENV)
 	}),
 	new webpack.ProvidePlugin({
 		React: 'react',
@@ -34,7 +32,7 @@ export default {
 	},
 	entry: {
 		client: path.resolve(PATHS.CLIENT),
-		vendor: Object.keys(dependencies)
+		vendor: Object.keys(require('./package.json').dependencies)
 	},
 	output: {
 		filename: '/js/[name].js',
