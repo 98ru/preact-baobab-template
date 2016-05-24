@@ -18,6 +18,5 @@ const Root = root(stateTree, () =>
 )
 
 ReactDOM.render(
-	<Root />,
-	document.body.appendChild(document.createElement('span'))
+	<Root />, document.getElementById('root')
 )
