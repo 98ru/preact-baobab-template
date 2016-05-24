@@ -1,17 +1,16 @@
 {
 	"env": {
 		"development": {
-			"presets": [
-				"react-hmre"
+			"presets": ["react-hmre"]
+		},
+		"production": {
+			"plugins": [
+				"transform-react-constant-elements",
+				"transform-react-inline-elements"
 			]
 		}
 	},
-	"plugins": [
-		"transform-decorators-legacy",
-		"transform-react-constant-elements",
-		"transform-react-inline-elements",
-		"transform-runtime"
-	],
+	"plugins": ["transform-runtime"],
 	"presets": [
 		"es2015",
 		"react",
