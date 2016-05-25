@@ -1,5 +1,9 @@
 {
-	"location": null,
+	"location": {
+		"hash": "",
+		"pathname": "",
+		"search": ""
+	},
 	"page": {
 		"error": null,
 		"title": ""
