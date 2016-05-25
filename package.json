@@ -15,11 +15,13 @@
     "baobab": "2.3.3",
     "baobab-react": "2.1.1",
     "bluebird": "3.4.0",
+    "history": "2.1.1",
     "react": "15.1.0",
     "react-dom": "15.1.0",
     "react-router": "2.4.1",
     "superagent": "2.0.0-alpha.3",
-    "url-pattern": "1.0.1"
+    "url-pattern": "1.0.1",
+    "why-did-you-update": "0.0.8"
   },
   "devDependencies": {
     "babel-loader": "6.2.4",
@@ -46,7 +48,6 @@
     "should": "8.4.0",
     "style-loader": "0.13.1",
     "webpack": "1.13.1",
-    "webpack-dev-server": "1.14.1",
-    "why-did-you-update": "0.0.8"
+    "webpack-dev-server": "1.14.1"
   }
 }

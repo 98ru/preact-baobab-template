@@ -1,3 +1,4 @@
+import {createHistory} from 'history'
 import Promise from 'bluebird'
 import superagent from 'superagent'
 
@@ -7,6 +8,13 @@ Promise.config({
 	cancellation: true,
 	longStackTraces: true
 })
+
+export function storeLocationState(dao, {key}) {
+	createHistory().listen(({hash, pathname, search}) => {
+		dao.stateTree.set(key, {hash, pathname, search})
+		dao.stateTree.commit()
+	})
+}
 
 export const clone = (o) =>
 	JSON.parse(JSON.stringify(o))
