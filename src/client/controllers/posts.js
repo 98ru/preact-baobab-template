@@ -3,7 +3,6 @@ import Controller from 'controllers'
 import Posts from 'components/posts'
 
 export default branch({
-	location: ['location'],
 	posts: ['posts', 'items']
 }, class extends Controller {
 	componentDidMount() {
@@ -11,7 +10,6 @@ export default branch({
 	}
 
 	render() {
-		console.log(this.props.location)
 		return (
 			<Posts posts={this.props.posts} />
 		)
