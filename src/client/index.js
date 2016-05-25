@@ -8,6 +8,10 @@ import defaultState from 'state.json'
 import {root} from 'baobab-react/higher-order'
 import routes from 'views/routes'
 
+if (process.env.NODE_ENV === 'development') {
+	require('why-did-you-update')(React)
+}
+
 const stateTree = new Baobab(defaultState)
 const dao = new Dao({actions, defaultState, stateTree})
 
