@@ -3,22 +3,19 @@ import {clone} from 'common/utils'
 export default class Dao {
 	static params = new WeakMap()
 
-	constructor(params) {
-		Dao.params.set(this, params)
+	constructor({actions, defaultState, stateTree}) {
+		Dao.params.set(this, {actions, defaultState, stateTree})
 	}
 
 	get actions() {
-		const params = Dao.params.get(this)
-		return params.actions
+		return Dao.params.get(this).actions
 	}
 
 	get defaultState() {
-		const params = Dao.params.get(this)
-		return clone(params.defaultState)
+		return clone(Dao.params.get(this).defaultState)
 	}
 
 	get stateTree() {
-		const params = Dao.params.get(this)
-		return params.stateTree
+		return Dao.params.get(this).stateTree
 	}
 }
