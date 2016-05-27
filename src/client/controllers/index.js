@@ -26,7 +26,7 @@ export default class Controller extends React.Component {
 
 	cancelPending = () => {
 		Controller.pending.get(this).forEach((action) => {
-			if (action.isPending()) {
+			if (action && action.isPending()) {
 				action.cancel()
 			}
 		})

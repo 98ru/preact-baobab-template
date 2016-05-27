@@ -5,7 +5,7 @@ export const clone = (o) =>
 	JSON.parse(JSON.stringify(o))
 
 export const request =
-	global.Promise.promisifyAll(superagent)
+	Promise.promisifyAll(superagent)
 
 export function storeLocationState(dao, {key}) {
 	createHistory().listen(({hash, pathname, search}) => {
