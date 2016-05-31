@@ -6,7 +6,7 @@ export class RestActions {
 		this.pattern = new Pattern(uri)
 
 		methods.forEach((method) => {
-			this[method] = (dao, {params, data, query = {}} = {}) => {
+			this[method] = (dao, {data, params, query = {}, timeout} = {}) => {
 				// FIX: transform arrays into
 				// a comma-separated values format
 				Object.keys(query).forEach((key) => {
@@ -16,16 +16,18 @@ export class RestActions {
 				})
 
 				const url = this.pattern.stringify(params)
-				const req = request[method](url).query(query).send(data)
-				const promise = req.endAsync()
+				const req = request[method](url)
+					.query(query).send(data).timeout(timeout)
 
+				const promise = req.endAsync()
 				return promise
 					.then((res) => res.body)
-					.catch((error) => dao.actions.page.setError(dao, {error}))
+					.catch((e) => {
+						dao.actions.common.handleError(dao, e)
+						throw e
+					})
 					.finally(() => {
-						if (promise.isCancelled()) {
-							req.abort()
-						}
+						if (promise.isCancelled()) req.abort()
 					})
 			}
 		})

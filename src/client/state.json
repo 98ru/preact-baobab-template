@@ -5,10 +5,10 @@
 		"search": ""
 	},
 	"page": {
-		"error": null,
 		"title": ""
 	},
 	"posts": {
-		"items": null
+		"isLoading": false,
+		"items": []
 	}
 }

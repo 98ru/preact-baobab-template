@@ -1,2 +1,2 @@
-export page from 'actions/page'
-export posts from 'actions/posts'
+export * as common from './common'
+export * as posts from './posts'

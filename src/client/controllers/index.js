@@ -21,14 +21,14 @@ export default class Controller extends React.Component {
 	}
 
 	set pending(action) {
-		Controller.pending.get(this).push(action)
+		if (action instanceof Promise) {
+			Controller.pending.get(this).push(action)
+		}
 	}
 
 	cancelPending = () => {
 		Controller.pending.get(this).forEach((action) => {
-			if (action && action.isPending()) {
-				action.cancel()
-			}
+			if (action.isPending()) action.cancel()
 		})
 	}
 

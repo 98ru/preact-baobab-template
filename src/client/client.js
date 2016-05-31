@@ -7,16 +7,10 @@ import DaoController from 'controllers/dao'
 import defaultState from 'state.json'
 import {root} from 'baobab-react/higher-order'
 import routes from 'views/routes'
-import {storeLocationState} from 'common/utils'
-import {whyDidYouUpdate} from 'why-did-you-update'
-
-if (process.env.NODE_ENV === 'development') {
-	whyDidYouUpdate(React)
-}
 
 const stateTree = new Baobab(defaultState)
 const dao = new Dao({actions, defaultState, stateTree})
-storeLocationState(dao, {key: 'location'})
+actions.common.storeLocationState(dao, {key: 'location'})
 
 const Root = root(stateTree, () =>
 	<DaoController dao={dao}>
