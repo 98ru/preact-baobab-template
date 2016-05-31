@@ -1,4 +1,4 @@
-import {NODE_ENV, isDeveloment, isProduction, PATHS} from './config'
+import {isDeveloment, NODE_ENV, PATHS} from './config'
 import path from 'path'
 import webpack from 'webpack'
 
@@ -18,7 +18,7 @@ const plugins = [
 	})
 ]
 
-if (isProduction) {
+if (!isDeveloment) {
 	plugins.push(
 		new webpack.optimize.DedupePlugin(),
 		new webpack.optimize.OccurrenceOrderPlugin()
