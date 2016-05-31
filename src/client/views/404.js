@@ -3,7 +3,7 @@ import Layout from 'components/layout'
 
 export default class extends Controller {
 	componentDidMount() {
-		this.actions.page.setTitle(this.dao, {
+		this.actions.common.setPageTitle(this.dao, {
 			title: '404'
 		})
 	}
