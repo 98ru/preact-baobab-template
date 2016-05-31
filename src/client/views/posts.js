@@ -4,7 +4,7 @@ import PostsController from 'controllers/posts'
 
 export default class extends Controller {
 	componentDidMount() {
-		this.actions.page.setTitle(this.dao, {
+		this.actions.common.setPageTitle(this.dao, {
 			title: 'Posts'
 		})
 	}

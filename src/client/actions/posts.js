@@ -1,10 +1,15 @@
 import {RestActions} from 'common/actions'
-const actions = new RestActions('//jsonplaceholder.typicode.com/posts/(:postId)')
+const restActions = new RestActions('//jsonplaceholder.typicode.com/posts/(:postId)')
 
-export default {
-	get(dao) {
-		return actions.get(dao).then((posts) => {
-			dao.stateTree.set(['posts', 'items'], posts)
+export const getPosts = (dao) => {
+	const cursor = dao.stateTree.select('posts')
+	cursor.set('isLoading', true)
+
+	return restActions.get(dao)
+		.then((posts) => {
+			cursor.set('items', posts)
 		})
-	}
+		.finally(() => {
+			cursor.set('isLoading', false)
+		})
 }

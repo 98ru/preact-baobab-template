@@ -1,16 +1,17 @@
 import Spinner from 'components/spinner'
 
-export default ({posts}) =>
-	!posts
-		? <Spinner />
+export default ({isLoading, items}) =>
+	<div className="posts">
+		{isLoading
+			? <Spinner />
 
-		: <div className="posts">
-			{posts.map(({body, id, title}) =>
+			: items.map(({body, id, title}) =>
 				<div className="posts__post media" key={id}>
 					<div className="media-body">
 						<h5 className="media-heading">{title}</h5>
-						{body}
+						<div>{body}</div>
 					</div>
 				</div>
-			)}
-		</div>
+			)
+		}
+	</div>

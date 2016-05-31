@@ -3,15 +3,15 @@ import Controller from 'controllers'
 import Posts from 'components/posts'
 
 export default branch({
-	posts: ['posts', 'items']
+	posts: ['posts']
 }, class extends Controller {
 	componentDidMount() {
-		this.pending = this.actions.posts.get(this.dao)
+		this.pending = this.actions.posts.getPosts(this.dao)
 	}
 
 	render() {
 		return (
-			<Posts posts={this.props.posts} />
+			<Posts {...this.props.posts} />
 		)
 	}
 })
