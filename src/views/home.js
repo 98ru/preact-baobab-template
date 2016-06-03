@@ -1,16 +1,16 @@
 import Controller from 'controllers'
-import Layout from 'components/layout'
+import {h} from 'preact'
 
 export default class extends Controller {
 	componentDidMount() {
 		this.actions.common.setPageTitle(this.dao, {
-			title: '404'
+			title: 'Home'
 		})
 	}
 
 	render() {
 		return (
-			<Layout>404</Layout>
+			<div>Home</div>
 		)
 	}
 }

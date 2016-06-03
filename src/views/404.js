@@ -1,19 +1,16 @@
 import Controller from 'controllers'
-import Layout from 'components/layout'
-import PostsController from 'controllers/posts'
+import {h} from 'preact'
 
 export default class extends Controller {
 	componentDidMount() {
 		this.actions.common.setPageTitle(this.dao, {
-			title: 'Posts'
+			title: '404'
 		})
 	}
 
 	render() {
 		return (
-			<Layout>
-				<PostsController />
-			</Layout>
+			<div>404</div>
 		)
 	}
 }

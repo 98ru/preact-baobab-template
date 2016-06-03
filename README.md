@@ -1,23 +1,21 @@
 React-Baobab-Template
 =====================
 
-React-Baobab-Template is an opinionated ready-to-use template which is build upon ES6, [React](https://github.com/facebook/react) and [Baobab](https://github.com/Yomguithereal/baobab).
+Preact-Baobab-Template is an opinionated ready-to-use template which is build upon ES6, [Preact](https://github.com/developit/preact) and [Baobab](https://github.com/Yomguithereal/baobab).
 
 Directory Structure
 -------------------
 
 ```
 ./
-├─ build/              -- build results
-├─ src/                -- project source
-│  ├─ assets/          -- assets like css, images, fonts
-│  └─ client/          -- client-side app
-│     ├─ actions/      -- list of actions
-│     ├─ common/       -- utils, helpers, etc.
-│     ├─ components/   -- dumb components
-│     ├─ controllers/  -- smart components
-│     └─ views/        -- routes, page controllers
-└─ test/               -- test helpers
+├─ dist/            -- build results
+├─ public/          -- static assets
+└─ src/             -- project source
+   ├─ actions/      -- list of actions
+   ├─ common/       -- routes, state, utils, etc.
+   ├─ components/   -- dumb components
+   ├─ controllers/  -- smart components
+   └─ views/        -- page controllers
 ```
 
 Project Architecture
@@ -54,4 +52,4 @@ Data Access Object or DAO is a special object created at the initialization of t
 License
 -------
 
-[MIT](https://github.com/slmgc/react-baobab-template/blob/master/LICENSE)
+[MIT](https://github.com/slmgc/preact-baobab-template/blob/master/LICENSE)

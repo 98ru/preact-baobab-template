@@ -8,5 +8,4 @@ export const getId = new function() {
 	return () => id++
 }
 
-export const isDevelopment = process.env.NODE_ENV === 'development'
 export const request = Promise.promisifyAll(superagent)
