@@ -1,5 +1,5 @@
-React-Baobab-Template
-=====================
+Preact-Baobab-Template
+======================
 
 Preact-Baobab-Template is an opinionated ready-to-use template which is build upon ES6, [Preact](https://github.com/developit/preact) and [Baobab](https://github.com/Yomguithereal/baobab).
 
