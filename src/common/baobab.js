@@ -18,8 +18,15 @@ export function branch(cursors, WrappedComponent) {
 		constructor(props, context) {
 			super(props, context)
 			this.watcher = context.tree.watch(cursors)
-			this.watcher.on('update', this.onUpdate)
 			this.state = this.watcher.get()
+		}
+
+		componentDidMount() {
+			this.watcher.on('update', this.onUpdate)
+		}
+
+		componentWillUnmount() {
+			this.watcher.release()
 		}
 
 		onUpdate = () => {
