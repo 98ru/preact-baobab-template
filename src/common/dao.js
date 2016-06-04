@@ -22,15 +22,17 @@ export class Dao {
 }
 
 export class DaoController extends Component {
+	static defaultProps = {
+		children: [null]
+	}
+
 	getChildContext() {
 		return {
-			dao: this.props.dao,
-			tree: this.props.dao.tree
+			dao: this.props.dao
 		}
 	}
 
 	render() {
-		const {children} = this.props
-		return children && children[0] || null
+		return this.props.children[0]
 	}
 }

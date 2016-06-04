@@ -1,6 +1,10 @@
 import {Component, h} from 'preact'
 
 export default class Controller extends Component {
+	static defaultProps = {
+		children: [null]
+	}
+
 	static pending = new WeakMap()
 
 	constructor(props, context) {
@@ -27,7 +31,6 @@ export default class Controller extends Component {
 	}
 
 	render() {
-		const {children} = this.props
-		return children && children[0] || null
+		return this.props.children[0]
 	}
 }
