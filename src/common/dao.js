@@ -24,11 +24,13 @@ export class Dao {
 export class DaoController extends Component {
 	getChildContext() {
 		return {
-			dao: this.props.dao
+			dao: this.props.dao,
+			tree: this.props.dao.tree
 		}
 	}
 
 	render() {
-		return this.props.children[0]
+		const {children} = this.props
+		return children && children[0] || null
 	}
 }

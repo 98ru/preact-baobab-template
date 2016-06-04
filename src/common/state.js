@@ -6,5 +6,9 @@ export const getDefaultState = () => ({
 	},
 	page: {
 		title: ''
+	},
+	posts: {
+		isLoading: false,
+		items: []
 	}
 })

@@ -1,11 +1,11 @@
-import {Component, h} from 'preact'
-import HomeView from 'views/home'
+import {h} from 'preact'
 import NotFoundView from 'views/404'
+import PostsView from 'views/posts'
 import Router from 'preact-router'
 
 export default (
 	<Router>
-		<HomeView path="/" />
+		<PostsView path="/" />
 		<NotFoundView default />
 	</Router>
 )

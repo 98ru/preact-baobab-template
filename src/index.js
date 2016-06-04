@@ -4,24 +4,20 @@ import Baobab from 'baobab'
 import {Dao, DaoController} from 'common/dao'
 import {getDefaultState} from 'common/state'
 import {h, render} from 'preact'
+import {root} from 'common/baobab'
 import routes from 'common/routes'
 
 const defaultState = getDefaultState()
-const dao = new Dao({
-	actions,
-	defaultState,
-	tree: new Baobab(defaultState)
-})
+const tree = new Baobab(defaultState)
+const dao = new Dao({actions, defaultState, tree})
+const Root = root(tree, () =>
+	<DaoController dao={dao}>{routes}</DaoController>
+)
 
 function init() {
-	render(
-		<DaoController dao={dao}>{routes}</DaoController>,
-		root, root.lastChild
-	)
+	const appRoot = document.getElementById('root')
+	render(<Root />, appRoot, appRoot.lastChild)
 }
 
-if (module.hot) {
-	module.hot.accept(init)
-}
-
+if (module.hot) module.hot.accept(init)
 init()

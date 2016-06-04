@@ -27,6 +27,7 @@ export default class Controller extends Component {
 	}
 
 	render() {
-		return this.props.children[0]
+		const {children} = this.props
+		return children && children[0] || null
 	}
 }
