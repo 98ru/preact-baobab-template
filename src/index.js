@@ -10,15 +10,9 @@ import routes from 'common/routes'
 const defaultState = getDefaultState()
 const tree = new Baobab(defaultState)
 const dao = new Dao({actions, defaultState, tree})
-
-// HACK: functional components break lyfecycle methods,
-// using a class-based component to fix this.
-// https://github.com/developit/preact/issues/175
-const Root = root(tree, class extends Component {
-	render() {
-		return <DaoController dao={dao}>{routes}</DaoController>
-	}
-})
+const Root = root(tree, () =>
+	<DaoController dao={dao}>{routes}</DaoController>
+)
 
 function init() {
 	const appRoot = document.getElementById('root')
