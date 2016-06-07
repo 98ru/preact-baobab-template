@@ -7,6 +7,7 @@
     "upgrade": "npm-upgrade"
   },
   "dependencies": {
+    "babel-runtime": "5.8.29",
     "baobab": "2.3.3",
     "bluebird": "3.4.0",
     "preact": "5.0.0-beta6",
