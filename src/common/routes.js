@@ -1,4 +1,3 @@
-import {h} from 'preact'
 import NotFoundView from 'views/404'
 import PostsView from 'views/posts'
 import Router from 'preact-router'

@@ -2,7 +2,6 @@ import 'common/bootstrap'
 import * as actions from 'actions'
 import Baobab from 'baobab'
 import {Dao, DaoController} from 'common/dao'
-import {Component, h, render} from 'preact'
 import {getDefaultState} from 'common/state'
 import {root} from 'common/baobab'
 import routes from 'common/routes'
@@ -15,8 +14,7 @@ const Root = root(tree, () =>
 )
 
 function init() {
-	const appRoot = document.getElementById('root')
-	render(<Root />, appRoot, appRoot.lastChild)
+	ReactDOM.render(<Root />, document.getElementById('root'))
 }
 
 if (module.hot) module.hot.accept(init)

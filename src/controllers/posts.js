@@ -1,6 +1,5 @@
 import {branch} from 'common/baobab'
 import Controller from 'controllers'
-import {h} from 'preact'
 import Posts from 'components/posts'
 
 export default branch({

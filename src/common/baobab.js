@@ -1,20 +1,19 @@
-import {Component, h} from 'preact'
 import Baobab from 'baobab'
 
-export function root(tree, WrappedComponent) {
-	return class extends Component {
+export function root(tree, Component) {
+	return class extends React.Component {
 		getChildContext() {
 			return {tree}
 		}
 
 		render() {
-			return <WrappedComponent {...this.props} />
+			return <Component {...this.props} />
 		}
 	}
 }
 
-export function branch(cursors, WrappedComponent) {
-	return class extends Component {
+export function branch(cursors, Component) {
+	return class extends React.Component {
 		constructor(props, context) {
 			super(props, context)
 			this.watcher = context.tree.watch(cursors)
@@ -35,7 +34,7 @@ export function branch(cursors, WrappedComponent) {
 
 		render() {
 			return (
-				<WrappedComponent
+				<Component
 					{...this.props}
 					{...this.state} />
 			)

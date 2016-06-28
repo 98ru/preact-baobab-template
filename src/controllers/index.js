@@ -1,10 +1,4 @@
-import {Component, h} from 'preact'
-
-export default class Controller extends Component {
-	static defaultProps = {
-		children: [null]
-	}
-
+export default class Controller extends React.Component {
 	static pending = new WeakMap()
 
 	constructor(props, context) {
@@ -31,6 +25,6 @@ export default class Controller extends Component {
 	}
 
 	render() {
-		return this.props.children[0]
+		return this.props.children
 	}
 }

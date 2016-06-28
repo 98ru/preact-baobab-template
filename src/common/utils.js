@@ -4,7 +4,7 @@ export const clone = (o) =>
 	JSON.parse(JSON.stringify(o))
 
 export const getId = new function() {
-	let id = +new Date
+	let id = 0
 	return () => id++
 }
 

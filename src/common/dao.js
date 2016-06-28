@@ -1,5 +1,4 @@
 import {clone} from 'common/utils'
-import {Component, h} from 'preact'
 
 export class Dao {
 	static params = new WeakMap()
@@ -21,11 +20,7 @@ export class Dao {
 	}
 }
 
-export class DaoController extends Component {
-	static defaultProps = {
-		children: [null]
-	}
-
+export class DaoController extends React.Component {
 	getChildContext() {
 		return {
 			dao: this.props.dao
@@ -33,6 +28,6 @@ export class DaoController extends Component {
 	}
 
 	render() {
-		return this.props.children[0]
+		return this.props.children
 	}
 }

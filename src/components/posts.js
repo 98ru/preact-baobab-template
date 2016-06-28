@@ -1,4 +1,3 @@
-import {h} from 'preact'
 import Spinner from 'components/spinner'
 
 export default ({isLoading, items}) =>
