@@ -11,11 +11,15 @@ module.exports = function(nwb) {
 			extra: {
 				plugins: [
 					new nwb.webpack.ProvidePlugin({
-						React: 'preact-compat',
-						ReactDOM: 'preact-compat'
+						React: 'react',
+						ReactDOM: 'react-dom'
 					})
 				],
 				resolve: {
+					alias: {
+						react: 'preact-compat',
+						'react-dom': 'preact-compat'
+					},
 					root: path.resolve('src')
 				}
 			}
