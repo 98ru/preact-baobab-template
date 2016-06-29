@@ -1,10 +1,8 @@
-import NotFoundView from 'views/404'
-import PostsView from 'views/posts'
-import Router from 'preact-router'
+import {Route} from 'react-router'
 
 export default (
-	<Router>
-		<PostsView path="/" />
-		<NotFoundView default />
-	</Router>
+	<Route>
+		<Route path="/" component={require('views/posts')} />
+		<Route path="*" component={require('views/404')} />
+	</Route>
 )
