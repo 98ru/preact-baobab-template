@@ -1,4 +1,8 @@
 export default class Controller extends React.Component {
+	static contextTypes = {
+		dao: React.PropTypes.object
+	}
+
 	static pending = new WeakMap()
 
 	constructor(props, context) {

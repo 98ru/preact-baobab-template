@@ -21,6 +21,10 @@ export class Dao {
 }
 
 export class DaoController extends React.Component {
+	static childContextTypes = {
+		dao: React.PropTypes.object
+	}
+
 	getChildContext() {
 		return {
 			dao: this.props.dao

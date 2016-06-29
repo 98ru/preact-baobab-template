@@ -1,19 +1,11 @@
 import Baobab from 'baobab'
 
-export function root(tree, Component) {
-	return class extends React.Component {
-		getChildContext() {
-			return {tree}
-		}
-
-		render() {
-			return <Component {...this.props} />
-		}
-	}
-}
-
 export function branch(cursors, Component) {
 	return class extends React.Component {
+		static contextTypes = {
+			tree: React.PropTypes.instanceOf(Baobab)
+		}
+
 		constructor(props, context) {
 			super(props, context)
 			this.watcher = context.tree.watch(cursors)
@@ -38,6 +30,22 @@ export function branch(cursors, Component) {
 					{...this.props}
 					{...this.state} />
 			)
+		}
+	}
+}
+
+export function root(tree, Component) {
+	return class extends React.Component {
+		static childContextTypes = {
+			tree: React.PropTypes.instanceOf(Baobab)
+		}
+
+		getChildContext() {
+			return {tree}
+		}
+
+		render() {
+			return <Component {...this.props} />
 		}
 	}
 }
