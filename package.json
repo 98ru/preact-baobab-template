@@ -3,15 +3,15 @@
   "scripts": {
     "build": "nwb build-web-app",
     "clean": "nwb clean-app",
-    "start": "nwb serve-web-app --fallback --port 8080 --reload",
-    "upgrade": "npm-upgrade"
+    "upgrade": "npm-upgrade",
+    "watch": "nwb serve-web-app --fallback --port 8080 --reload"
   },
   "dependencies": {
     "babel-runtime": "5.8.29",
     "baobab": "2.3.3",
     "bluebird": "3.4.1",
-    "preact": "5.1.0-beta.19",
-    "preact-compat": "1.8.1",
+    "preact": "5.1.0-beta.20",
+    "preact-compat": "1.8.2",
     "preact-router": "2.0.0",
     "superagent": "2.0.0",
     "url-pattern": "1.0.1"
