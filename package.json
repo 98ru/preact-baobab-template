@@ -10,9 +10,9 @@
     "babel-runtime": "5.8.29",
     "baobab": "2.3.3",
     "bluebird": "3.4.1",
-    "preact": "5.1.0-beta.20",
-    "preact-compat": "1.9.0",
-    "react-router": "2.5.1",
+    "preact": "5.1.0-beta.26",
+    "preact-compat": "1.11.0",
+    "react-router": "2.5.2",
     "superagent": "2.0.0",
     "url-pattern": "1.0.1"
   },
